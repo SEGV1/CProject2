@@ -1,0 +1,50 @@
+using System;
+
+namespace CSecondProgram
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Password();
+        }
+
+        static void Password()
+        {
+            for (int i = 1; i < 4; i++)
+            {
+                if (i <= 3)
+                {
+                    int tries = 3;
+                 
+                    Console.Write("Please enter your username: ");
+                    string name = Console.ReadLine();
+                    Console.Write("Please enter your password: ");
+                    int pass = Convert.ToInt32(Console.ReadLine());
+
+                    if (name.Equals("Bennett") && pass.Equals(20200620))
+                    {
+                        Console.WriteLine("Welcome Mr. Li.");
+                        break;
+                            
+                    }
+                    else if (name.Equals("Bennett") && pass.Equals(20200620) == false)
+                    {
+                        Console.WriteLine("Wrong password, please try again.");
+                            
+                    }
+                    else if (name.Equals("Bennett") == false)
+                    {
+                        Console.WriteLine("Non-existant username, please try again.");
+                            
+                    }
+                    Console.WriteLine($"You have used {i} attempts, you have {tries - i} attempts left.");
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+    }
+}
